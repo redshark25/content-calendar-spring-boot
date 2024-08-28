@@ -2,6 +2,7 @@ package com.senura.content_calendar.controller;
 
 import com.senura.content_calendar.model.Content;
 import com.senura.content_calendar.repository.ContentCollectionRepository;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/content")
+@CrossOrigin
 public class ContentController {
 
     /*//we need an instance of ContentCollectionRepository
@@ -42,8 +44,28 @@ public class ContentController {
                 orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND,"content not found"));
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("")
-    public void create(@RequestBody Content content){
+    public void create(@Valid @RequestBody Content content){
         repository.save(content);
     }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @PutMapping("/{id}")
+    public void update(@RequestBody Content content,@PathVariable Integer id){
+       if(!repository.findById(id).isPresent()){
+           throw new ResponseStatusException(HttpStatus.NOT_FOUND,"content not found");
+       }
+        repository.save(content);
+    }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id){
+        if(!repository.findById(id).isPresent()){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"content not found");
+        }
+        repository.delete(id);
+    }
+
 }

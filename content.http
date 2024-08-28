@@ -4,9 +4,10 @@ GET http://localhost:8080/api/content
 ### create new content
 POST http://localhost:8080/api/content
 Content-Type: Application/json
+
 {
-    "id": 4,
-    "title": "my 4th blog post",
+    "id": 3,
+    "title": "test",
     "desc": "my blog post",
     "status": "IDEA",
     "contentType": "ARTICLE",
@@ -14,3 +15,21 @@ Content-Type: Application/json
     "dateUpdated": null,
     "url": ""
   }
+
+### update existing  content
+PUT http://localhost:8080/api/content/2
+Content-Type: Application/json
+
+{
+  "id": 2,
+  "title": "hello hello",
+  "desc": "hello hello",
+  "status": "IDEA",
+  "contentType": "ARTICLE",
+  "dateCreated": "2024-08-25T19:58:04.418467",
+  "dateUpdated": null,
+  "url": ""
+}
+
+###Delete content by ID
+DELETE http://localhost:8080/api/content/3
