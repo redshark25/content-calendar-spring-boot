@@ -25,12 +25,17 @@ public class ContentController {
         repository = new ContentCollectionRepository();
     }
 */
-    private final ContentCollectionRepository repository;
+   // private final ContentCollectionRepository repository;
 
     private final ContentJdbcTemplateRepository templateRepository;
 
-    public ContentController(ContentCollectionRepository repository, ContentJdbcTemplateRepository templateRepository) {
-        this.repository = repository;
+   /* public ContentController(ContentCollectionRepository repository, ContentJdbcTemplateRepository templateRepository) {
+         this.repository = repository;
+        this.templateRepository = templateRepository;
+    }*/
+
+    public ContentController(ContentJdbcTemplateRepository templateRepository) {
+
         this.templateRepository = templateRepository;
     }
 
@@ -38,10 +43,10 @@ public class ContentController {
     // empty path because we got the request mapping on the class itself
     @GetMapping("")
     public List<Content> findAll(){
-        return repository.findAll();
+        return templateRepository.getAllContent();
     }
 
-    @GetMapping("/{id}")
+   /* @GetMapping("/{id}")
     public Content findById(@PathVariable Integer id){
         return repository.findById(id).
                 orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND,"content not found"));
@@ -69,6 +74,6 @@ public class ContentController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,"content not found");
         }
         repository.delete(id);
-    }
+    }*/
 
 }

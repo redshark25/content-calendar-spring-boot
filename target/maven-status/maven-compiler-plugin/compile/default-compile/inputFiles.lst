@@ -1,8 +1,0 @@
-/Users/senurafernando/Documents/Java /Microservices/Spring/content-calendar/src/main/java/com/senura/content_calendar/Application.java
-/Users/senurafernando/Documents/Java /Microservices/Spring/content-calendar/src/main/java/com/senura/content_calendar/Message.java
-/Users/senurafernando/Documents/Java /Microservices/Spring/content-calendar/src/main/java/com/senura/content_calendar/config/MyWebConfig.java
-/Users/senurafernando/Documents/Java /Microservices/Spring/content-calendar/src/main/java/com/senura/content_calendar/controller/ContentController.java
-/Users/senurafernando/Documents/Java /Microservices/Spring/content-calendar/src/main/java/com/senura/content_calendar/model/Content.java
-/Users/senurafernando/Documents/Java /Microservices/Spring/content-calendar/src/main/java/com/senura/content_calendar/model/Status.java
-/Users/senurafernando/Documents/Java /Microservices/Spring/content-calendar/src/main/java/com/senura/content_calendar/model/Type.java
-/Users/senurafernando/Documents/Java /Microservices/Spring/content-calendar/src/main/java/com/senura/content_calendar/repository/ContentCollectionRepository.java
