@@ -2,6 +2,7 @@ package com.senura.content_calendar.controller;
 
 import com.senura.content_calendar.model.Content;
 import com.senura.content_calendar.repository.ContentCollectionRepository;
+import com.senura.content_calendar.repository.ContentJdbcTemplateRepository;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -26,9 +27,11 @@ public class ContentController {
 */
     private final ContentCollectionRepository repository;
 
+    private final ContentJdbcTemplateRepository templateRepository;
 
-    public ContentController(ContentCollectionRepository repository) {
+    public ContentController(ContentCollectionRepository repository, ContentJdbcTemplateRepository templateRepository) {
         this.repository = repository;
+        this.templateRepository = templateRepository;
     }
 
     //make a request and find all the pieces of content in the system
