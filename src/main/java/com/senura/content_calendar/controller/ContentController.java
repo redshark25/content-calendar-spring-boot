@@ -1,9 +1,11 @@
 package com.senura.content_calendar.controller;
 
 import com.senura.content_calendar.model.Content;
+import com.senura.content_calendar.model.Status;
 import com.senura.content_calendar.repository.ContentRepository;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -57,6 +59,15 @@ public class ContentController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,"content not found");
         }
         repository.deleteById(id);
+    }
+    @GetMapping("/filter/{keyword}")
+    public List<Content> findByTitle(@PathVariable String keyword){
+        return repository.findAllByTitleContains(keyword);
+    }
+
+    @GetMapping("/filter/status/{status}")
+    public List<Content> findByStatus(@PathVariable Status status){
+        return repository.listByStatus(status);
     }
 
 }

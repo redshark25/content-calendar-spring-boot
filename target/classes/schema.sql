@@ -9,8 +9,8 @@ CREATE TABLE IF NOT EXISTS Content (
     url VARCHAR(255)
     );
 
-INSERT INTO Content (title, description, status, content_type, date_created, date_updated, url)
+/*INSERT INTO Content (title, description, status, content_type, date_created, date_updated, url)
 VALUES
     ('Spring Data Tutorial', 'A guide to using Spring Data', 'PUBLISHED', 'ARTICLE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'https://example.com/spring-data'),
     ('Java Basics', 'An introduction to Java programming', 'DRAFT', 'ARTICLE', CURRENT_TIMESTAMP, NULL, 'https://example.com/java-basics'),
-    ('Spring Boot Example', 'A simple Spring Boot application', 'IN_REVIEW', 'CODE_SAMPLE', CURRENT_TIMESTAMP, NULL, 'https://example.com/spring-boot-example');
+    ('Spring Boot Example', 'A simple Spring Boot application', 'IN_REVIEW', 'CODE_SAMPLE', CURRENT_TIMESTAMP, NULL, 'https://example.com/spring-boot-example');*/
