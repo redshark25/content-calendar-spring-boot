@@ -30,7 +30,7 @@ public class Application {
 
 	}
 
-	@Bean
+	/*@Bean
 	CommandLineRunner commandLineRunner(ContentRepository repository){
 
 		return args -> {
@@ -44,6 +44,6 @@ public class Application {
 					"");
 			repository.save(content);
 		};
-	}
+	}*/
 
 }
