@@ -13,7 +13,7 @@ public record Content(
         @NotEmpty
         @NotBlank
         String title,
-        @Column("DESCRIPTION")
+        @Column("description")
         String desc,
         Status status,
         Type contentType,
